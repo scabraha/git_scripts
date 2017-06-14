@@ -9,7 +9,7 @@ else
 	compareTo=$1
 fi
 
-git diff --name-only $compareTo react/ | while read line; do
+git diff --name-only $compareTo . | while read line; do
 	echo "Checking $line"
 	./node_modules/.bin/eslint --fix $line
 done
